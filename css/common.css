@@ -1,9 +1,9 @@
 @charset 'utf-8';
 @import url(./my_reset.css);
+
 @font-face {
-  font-family: "S-CoreDream-3Light";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff")
-    format("woff");
+  font-family: "Noto Sans KR";
+  src: url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
   font-weight: normal;
   font-style: normal;
 }
@@ -15,3 +15,407 @@ Solid → 900
 Regular, Brands → 400
 Light → 300
  */
+
+:root {
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+.mw {
+  max-width: 1440px;
+  width: calc(100% - 4rem);
+  margin: auto;
+}
+
+.hd {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 6rem;
+}
+
+.hd .logo {
+  width: 10rem;
+}
+
+.hd .logo * {
+  display: block;
+  width: 100%;
+}
+
+.hd .ham {
+  display: none;
+  position: absolute;
+  right: 3rem;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-size: 2.5rem;
+  color: #144AAA;
+  cursor: pointer;
+}
+
+.hd .hamX {
+  display: none;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-size: 1.5rem;
+  color: white;
+  cursor: pointer;
+}
+
+@media(min-width:1281px) {
+  .hd>nav {
+    height: 100%;
+    position: relative;
+  }
+
+  .hd .gnb {
+    display: flex;
+    align-items: center;
+    font-size: 1.312rem;
+    width: 100%;
+    height: 100%;
+  }
+
+  .hd .gnb>li {
+    white-space: nowrap;
+    height: 6rem;
+    line-height: 6rem;
+    padding: 0 2.5rem;
+    font-family: 'GmarketSansBold';
+    font-weight: bold;
+    color: #144AAA;
+  }
+
+  .hd .gnb>li:hover {
+    color: #000000;
+  }
+
+  .hd .gnb>li>a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .hd nav:hover .sub {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .hd nav::before {
+    content: '';
+    background-color: #F0F4FF;
+    position: absolute;
+    top: 100%;
+    left: -200%;
+    width: 1000%;
+    opacity: 0;
+    transition: 0.3s;
+  }
+
+  .hd nav:hover::before {
+    height: 16rem;
+    opacity: 1;
+  }
+
+  .hd .sub {
+    display: none;
+    position: absolute;
+    top: 100%;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s;
+    transition-delay: 0.05s;
+    padding-top: 2rem;
+  }
+
+  .hd .sub li {
+    line-height: 3rem;
+    width: 100%;
+    min-height: 3rem;
+    text-align: left;
+  }
+
+  .hd .sub li:hover a::after {
+    opacity: 1;
+  }
+
+  .hd .sub a::after {
+    content: '';
+    display: inline-block;
+    background-color: #144AAA;
+    margin-left: 0.3rem;
+    width: 0.4rem;
+    height: 0.4rem;
+    border-radius: 1rem;
+    opacity: 0;
+    transition: 0.3s;
+  }
+
+  .hd .sub li:hover a {
+    color: #144AAA;
+  }
+
+  .hd .sub li a {
+    display: inline-block;
+    font-size: 0.857em;
+    font-weight: 400;
+    color: #000000;
+    text-align: left;
+    width: 100%;
+    height: 100%;
+  }
+
+  .hd .func {
+    display: flex;
+  }
+
+  .hd .func a {
+    white-space: nowrap;
+    font-size: 0.875rem;
+    color: #144AAA;
+    display: inline-block;
+    padding-left: 0.5rem;
+  }
+}
+
+@media(max-width:1280px) {
+
+  .hd .func {
+    display: none;
+  }
+
+  .hd .ham {
+    display: block;
+    z-index: 999;
+  }
+
+  .hd .hamX,
+  .hd .gnb,
+  .hd .func {
+    display: none;
+  }
+
+  .hd .ham:hover~.hamX,
+  .hd .ham:hover~nav .gnb {
+    display: block;
+  }
+
+  .hd .ham:hover~.func {
+    display: flex;
+  }
+
+  .hd .hamX {
+    position: absolute;
+    color: white;
+    z-index: 999;
+    top: 1rem;
+    right: 1rem;
+  }
+
+  .hd .gnb {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: #144AAA;
+    color: white;
+    width: 100%;
+    height: 100%;
+    z-index: 900;
+  }
+
+  .hd .gnb a {
+    display: block;
+  }
+
+  .hd .gnb>li:nth-of-type(1) {
+    margin-top: 5rem;
+  }
+
+  .hd .gnb>li {
+    position: relative;
+    padding: 0 1rem 1rem 2rem;
+  }
+
+  .hd .gnb>li>a {
+    font-family: 'GmarketSansBold';
+    font-weight: bold;
+    transition: 0.3s;
+  }
+
+  .hd .sub {
+    display: none;
+    font-size: 0.857em;
+    padding: 0.5rem 0 0.5rem 1rem;
+  }
+
+  .hd .sub li {
+    padding-top: 0.7rem;
+  }
+
+  .hd .gnb>li:hover .sub {
+    display: block;
+  }
+
+
+  .hd .func {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    color: white;
+    z-index: 950;
+  }
+
+  .hd .func a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 5rem;
+    height: 2rem;
+    border-radius: 100px;
+    background-color: #4574c4;
+    margin-left: 1rem;
+  }
+
+  .hd .func a i {
+    padding-right: 0.2rem;
+  }
+}
+
+.mainVisual {
+  position: relative;
+  height: 45rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mainVisual h2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: 'GmarketSansBold', sans-serif;
+  font-weight: bold;
+  color: #144AAA;
+  height: 100%;
+}
+
+.mainVisual h2 span {
+  font-size: 1.875rem;
+  padding-bottom: 1rem;
+}
+
+.mainVisual h2 strong {
+  white-space: nowrap;
+  font-size: 3.6875rem;
+  line-height: 4rem;
+}
+
+.mv_slide {
+  width: 70%;
+}
+
+.mv_slide .swiper-slide {
+  display: flex;
+  align-items: center;
+}
+
+.mv_slide .swiper-slide img {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  object-fit: cover;
+}
+
+.mv_slide .swiper-pagination {
+  position: absolute;
+  width: 10rem;
+  bottom: 2rem;
+}
+
+.swiper-pagination-bullet {
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  line-height: 20px;
+  font-size: 12px;
+  color: #000;
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.swiper-pagination-bullet-active {
+  color: #fff;
+  background: #007aff;
+}
+
+.mainVisual .quick {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: -3rem;
+  background-color: #F0F4FF;
+  height: 6rem;
+  padding: 0 3rem 0 3rem;
+  z-index: 100;
+}
+
+.mainVisual .quick a {
+  display: block;
+  width: 20rem;
+  height: 3rem;
+  line-height: 3rem;
+  white-space: nowrap;
+  padding: 0 1rem 0 1rem;
+  font-size: 1.5625rem;
+  font-family: 'GmarketSansBold', sans-serif;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.mainVisual .quick a::after {
+  font-family: "Font Awesome 6 Free";
+  content: '\f061';
+  padding-left: 1rem;
+  transition: 0.3s;
+}
+
+.mainVisual .quick a:hover {
+  color: #144AAA;
+}
+
+.mainVisual .quick a:hover::after {
+  color: #144AAA;
+  padding-left: 1.3rem;
+}
+
+.eduMonth {
+  background-color: #144AAA;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 1000px;
+}
+
+.eduMonth h2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.eduMonth h2 strong {
+  font-size: 2.5rem;
+  font-family: 'GmarketSansBold', sans-serif;
+  font-weight: bold;
+}
+
+.eduMonth>a {
+  position: absolute;
+}
