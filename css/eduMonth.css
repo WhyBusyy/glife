@@ -1,0 +1,191 @@
+/* sec1 .eduMonth 시작 */
+
+.eduMonth {
+    background-color: var(--color-mb);
+    color: white;
+    padding-top: 10%;
+    text-align: center;
+}
+
+.eduMonth h2 strong,
+.year strong {
+    font-size: 2.5rem;
+    font-family: 'GmarketSansBold';
+}
+
+.eduMonth h2 span {
+    font-size: 1rem;
+    font-family: 'GmarketSansMedium';
+}
+
+.calendarArea,
+.day {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.calendarArea {
+    color: rgba(255, 255, 255, 0.5);
+    position: relative;
+}
+
+.year {
+    position: relative;
+}
+
+.year strong {
+    line-height: 1;
+}
+
+.year span {
+    font-size: 0.875rem;
+    font-family: 'GmarketSansMedium';
+}
+
+.year button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    color: inherit;
+    border: none;
+    font-size: 1rem;
+}
+
+.year button:nth-of-type(1) {
+    left: -1.8rem;
+}
+
+.year button:nth-of-type(2) {
+    right: -1.8rem;
+}
+
+.day {
+    text-decoration: underline;
+    width: 100%;
+    padding: 0 2rem;
+    gap: 0.5rem;
+}
+
+.day .on {
+    border: 1px solid white;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    color: white;
+}
+
+.calendarArea a {
+    position: absolute;
+    font-size: 1rem;
+    top: -1rem;
+    right: 0;
+}
+
+.eduSlide {
+    padding: 3rem 0 5rem 0;
+}
+
+.eduSlide .card {
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+    border-radius: 1rem;
+}
+
+.eduSlide .card img {
+    width: 100%;
+    height: 25vw;
+    object-fit: fill;
+    border-radius: 1rem;
+}
+
+.eduSlide .card>span {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 1rem;
+}
+
+.eduSlide .card>time {
+    font-size: 1rem;
+}
+
+.eduSlide .card>strong {
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+
+.eduSlide .card a {
+    color: transparent;
+    position: absolute;
+    z-index: 50;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.eduSlide .card:hover {
+    transform-origin: top;
+    transform: scale(1.1);
+}
+
+.eduSlide .card:hover .info {
+    display: none;
+}
+
+.eduSlide .card:hover .desc {
+    display: flex;
+}
+
+.desc {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 100%;
+    height: 100%;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.desc>* {
+    transform: translateY(-2rem);
+}
+
+.desc span:first-of-type {
+    border: 1px solid white;
+    border-radius: 999px;
+    display: block;
+    width: 3rem;
+    text-align: center;
+}
+
+.desc span,
+.desc time {
+    font-size: 1.25rem;
+}
+
+.desc strong {
+    font-size: 1.562rem;
+    position: relative;
+    padding-bottom: 2rem;
+}
+
+.desc strong::after {
+    content: '';
+    position: absolute;
+    width: 120%;
+    border-bottom: 1px solid white;
+    bottom: 1rem;
+    left: 0;
+    transform: translateX(-10%);
+}
+
+.desc time,
+.desc span:nth-of-type(2) {
+    align-self: flex-start;
+    padding-left: 1rem;
+}
