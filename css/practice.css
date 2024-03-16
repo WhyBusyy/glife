@@ -42,7 +42,7 @@ font-weight: 900;
     font-family: "Noto Sans KR";
 }
 
-section>.inner,
+/* section>.inner, */
 .mw {
     max-width: 1440px;
     /* width: calc(100% - calc(var(--gap) * 2)); */
@@ -320,3 +320,191 @@ section>.inner,
 }
 
 /* sec1 .mainVisual 끝 */
+
+.eduMonth {
+    background-color: var(--color-mb);
+    color: var(--color-wh);
+    padding-top: 150px;
+}
+
+.eduMonth a {
+    color: var(--color-wh);
+}
+
+.eduMonth h2 {
+    text-align: center;
+}
+
+.eduMonth h2>* {
+    display: block;
+}
+
+.eduMonth h2 strong {
+    font-size: 40px;
+    padding-bottom: 10px;
+    letter-spacing: -3px;
+}
+
+.eduMonth h2 span {
+    font-size: 1rem;
+}
+
+.calendarArea {
+    padding: 50px 0;
+}
+
+.eduMonth .year {
+    position: relative;
+    text-align: center;
+}
+
+.eduMonth .year>* {
+    display: block;
+}
+
+.eduMonth .year strong {
+    font-size: 40px;
+}
+
+.eduMonth .year button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.eduMonth .year button:nth-of-type(1) {
+    left: -20px;
+}
+
+.eduMonth .year button:nth-of-type(2) {
+    right: -20px;
+}
+
+.eduMonth .calendarArea,
+.eduMonth .day {
+    display: flex;
+    gap: 1rem;
+}
+
+.eduMonth .calendarArea {
+    gap: 30px;
+}
+
+.eduMonth .day {
+    flex: 1;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.eduMonth .day li {
+    position: relative;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.eduMonth .day li::before {
+    content: '';
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    border: 1px solid white;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transform-origin: center;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.eduMonth .day li.on::before,
+.eduMonth .day li:hover::before {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* .eduMonth .day li {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.eduMonth .day li:hover,
+.day .on {
+    border: 1px solid white;
+} */
+/* 
+.eduSlide .swiper-slide {
+    background-color: aliceblue;
+} */
+
+.eduSlide {
+    width: calc(100% + 100px);
+    left: -50px;
+    padding: 50px 0 100px 0;
+}
+
+.eduSlide .swiper-slide-active {}
+
+.eduSlide .card {
+    height: 25vw;
+}
+
+.eduSlide .card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.eduSlide .card .info {}
+
+.eduSlide .card .more {
+    z-index: 10;
+    color: transparent;
+}
+
+.eduSlide .card .more,
+.eduSlide .card .desc {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.eduSlide .card .desc {
+    /* display: none; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 2rem;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.eduSlide .card:hover .desc {
+    opacity: 1;
+}
+
+.more {
+    position: absolute;
+    right: 0;
+    top: -30px;
+}
+
+@media(max-width:1100px) {
+    .eduMonth .calendarArea {
+        display: none;
+    }
+}
