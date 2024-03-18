@@ -1,0 +1,46 @@
+.ourCenter::before {
+    width: 200px;
+    height: 200px;
+    background-image: url(../img/main-bg-l.svg);
+    background-repeat: no-repeat;
+    animation-name: leftRight;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    opacity: 0.3;
+}
+
+@keyframes topDown {
+    0% {
+        top: -50px;
+    }
+
+    100% {
+        top: 120px;
+    }
+}
+
+@keyframes leftRight {
+    0% {
+        top: -250px;
+        left: -100px;
+    }
+
+    100% {
+        top: -250px;
+        left: 300px;
+    }
+}
+
+.ourCenter h2 {
+    padding-bottom: 20%;
+}
+
+.ourCenter img {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-80%);
+    right: 150px;
+    width: 30%;
+}
